@@ -6,5 +6,12 @@
         <input type="integer" name="amount">
         <input type="submit" value="submit">
     </form>
+    {%if piggybank%}
+    <h4>Piggbank is {{piggybank}}</h4>
+    <h4>Safelock is {{safelock10}} to {{safelock15}} </h4>
+    <h4>Target is {{piggybank}}</h4>
+    <h4>Flex dollar is {{flex_dollar}}</h4>
+    <h4>Investify is {{investify}}</h4>
+    {%endif%}
 
 </body>

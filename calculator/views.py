@@ -15,6 +15,7 @@ def index(request):
     return render(request, "cal/index.html")
 
 def create_info(request):
+    context = {}
     if request.method == "POST":
         amount = int(request.POST.get("amount"))
         start_date = request.POST.get("start")
@@ -27,9 +28,14 @@ def create_info(request):
         piggybank = round(amount *  PIGGYBANK_RATE * duration, 4)
         safelock_10 = round(amount *  SAFELOCK_RATE10 * duration, 4)
         safelock_15 = round(amount *  SAFELOCK_RATE15 * duration, 4)
-        flex = round(amount *  FLEX_DOLLAR * duration, 4)
+        flex_dollar = round(amount *  FLEX_DOLLAR * duration, 4)
         investify =round( amount *  INVESTIFY_RATE * duration, 4)
-
-        print(piggybank, safelock_10, safelock_15, flex)
-    return render(request, "cal/form.html")
+        context = {
+            "piggybank" : piggybank,
+            "safelock10": safelock_10,
+            "safelock15": safelock_15,
+            "investify": investify,
+            "flex_dollar":flex_dollar
+        }
+    return render(request, "cal/form.html", context)
 

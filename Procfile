@@ -1,1 +1,1 @@
-"web: gunicorn pigcalc.wsgi
+web: gunicorn pigcalc.wsgi
