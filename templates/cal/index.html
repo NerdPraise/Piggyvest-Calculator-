@@ -41,28 +41,19 @@
                             Welcome to the future of savings & Investments
                         </p>
                     </header>
-                    <form action="{%url 'calc'%}" method="POST">
+                    <form id="form" method="POST" form-data-url="{%url 'calc'%}">
                         {%csrf_token%}
                         <label for="fullname">Amount to invest</label>
-                        <input id="fullname" placeholder="Amount" type="number" name="amount">
+                        <input id="amount" placeholder="Amount" type="number" name="amount">
                         <label for="email">Start Date</label>
-                        <input id="email" placeholder="Start date" type="date" name="start">
+                        <input id="start" placeholder="Start date" type="date" name="start">
                         <label for="email">End Date</label>
-                        <input id="email" placeholder="End date" name="end" type="date">
+                        <input id="end" placeholder="End date" name="end" type="date">
 
-                        <button> CALCULATE </button>
+                        <button id="btns"> CALCULATE </button>
                     </form>
                     <label for="email">Payback Results</label>
-                    <textarea id="email" type="textarea" rows="10" cols="25" disabled placeholder="Payback Results">{%if not piggybank %}
-Zero investment{%else%}
-Piggybank interest is ₦{{piggybank}}
-Safelock interest is ₦{{piggybank}} to ₦{{safelock15}} 
-Target interest is ₦{{piggybank}}
-Flex interest is ₦{{piggybank}}
-Flex dollar interest is ₦{{flex_dollar}}
-Investify interest is between ₦{{piggybank}} to ₦{{investify}}
-                        {%endif%}
-                    </textarea>
+                    <textarea id="texta" type="textarea" rows="10" cols="25" disabled placeholder="Payback Results">Zero investments</textarea>
                     <button> LOGIN </button>
                 </div>
                 <div class="clear"></div>
@@ -83,6 +74,8 @@ Investify interest is between ₦{{piggybank}} to ₦{{investify}}
 
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="{%static 'js/script.js'%}"></script>
 </body>
 
 </html>
