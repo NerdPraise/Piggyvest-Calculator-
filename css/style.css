@@ -1,15 +1,15 @@
 @font-face {
     font-family: "U8-Regular";
-    src:url("fonts/U8Trial-Regular.ttf")
+    src:url("../fonts/U8Trial-Regular.ttf")
 }
 
 @font-face {
     font-family: "U8-Bold";
-    src:url("fonts/U8Trial-Bold.ttf")
+    src:url("../fonts/U8Trial-Bold.ttf")
 }
 @font-face {
     font-family: "U8-Medium";
-    src:url("fonts/U8Trial-Medium.ttf")
+    src:url("../fonts/U8Trial-Medium.ttf")
 }
 
 body {
@@ -70,7 +70,7 @@ label {
     padding: 0 35px 35px;
 }
 
-button {
+.piggy-button {
     display:block;
     margin:15px auto;
     padding: 1.25rem 30px ;
@@ -84,7 +84,7 @@ button {
     font-size: .875rem;
 }
 
-button:hover{
+.piggy-button:hover{
     background-color: white;
     color:#083E9E;
     border: 1px solid #083E9E;
@@ -96,7 +96,6 @@ button:hover{
     margin:0;
     width:50%
 }
-
 .half {
     float:right;
     margin:0;
@@ -105,7 +104,6 @@ button:hover{
 
 .big-container {
     background-size: 60%;
-    margin:0px 70px
 }
 
 
@@ -142,7 +140,12 @@ button:hover{
 .homimg {
     width: 600px;
 }
-
+.illustration {
+    max-width: 600px;
+    width: 60%;
+    margin:0 auto;
+    text-align: center;
+}
 @media only screen and (max-width:890px) {
     .navlist {
         display: none;
@@ -186,4 +189,111 @@ button:hover{
     .halfs {
         width: 90%;
     }
+}
+.share-social-media {
+    min-width: 100%;
+    margin: 20px auto;
+    max-width: 450px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.share-social-media button,
+ .download button{
+    margin: 10px;
+    padding: 7px;
+    padding-left: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 0;
+    border-radius: 5px 5px 5px 0;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: "U8-Regular";
+}
+
+.share-social-media button i,
+ .download button i {
+    background-color: white;;
+    padding: 10px;
+    border-radius: 3px;
+    margin-right:10px;
+} 
+
+/* facebok */
+.share-social-media .facebook {
+    background-color: #3b5998;
+    
+}
+.share-social-media .fa-facebook-f {
+    color: #3b5998;
+}
+.share-social-media .facebook:hover{
+    background-color: white;
+    color: #3b5998;
+    transition: ease 0.5s;
+}
+/* twitter */
+.share-social-media .twitter {
+    background-color: #00acee;
+    
+}
+.share-social-media .fa-twitter {
+    color: #00acee;
+}
+.share-social-media .twitter:hover{
+    background-color: white;
+    color: #00acee;
+    transition: ease 0.5s;
+}
+/* twitter */
+.share-social-media .whatsapp {
+    background-color: #25d336;
+    
+}
+.share-social-media .fa-whatsapp {
+    color: #25d336;
+}
+.share-social-media .whatsapp:hover{
+    background-color: white;
+    color: #25d336;
+    transition: ease 0.5s;
+}
+/* download */
+.download {
+    margin: 10px 0;
+}
+.download button {
+    margin: 0 auto;
+    background-color: #e6302f;
+    width: 50%;
+    text-transform: uppercase;
+    justify-content: center;
+    font-size: 15px;
+}
+.download button i {
+    background-color: #e6302f;
+}
+.download button:hover,
+.download button:hover i{
+    background-color: white;
+    color: #e6302f;
+    transition: ease 0.5s;
+}
+
+.or {
+    text-align: center;
+}
+@media screen and (max-width: 450px) {
+    .share-social-media {
+        grid-template-columns: 150px;
+        grid-template-rows: repeat(3, 1fr);
+        justify-content: center;
+    }
+    .share-social-media button,
+ .download button{
+    font-size: 15px;
+}
 }

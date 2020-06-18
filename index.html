@@ -3,8 +3,11 @@
 
 <head>
     <title>Dashboard - PiggyVest</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="shortcut icon" type="image/icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -29,7 +32,7 @@
         <div class="sm-container">
             
             <div class="big-container">
-                <div class="halfs">
+                <div class="halfs illustration">
                     <img src="images/home.png" class="homimg" width="600px">
                 </div>
                 <div class="form-container halfs">
@@ -40,6 +43,7 @@
                             Welcome to the future of savings & Investments
                         </p>
                     </header>
+                    <!-- input -->
                     <form action="">
                         <label for="fullname">Amount to invest</label>
                         <input id="fullname" placeholder="Amount" type="number" value="Amount">
@@ -48,28 +52,40 @@
                         <label for="email">End Date</label>
                         <input id="email" placeholder="End date" value="end" type="date">
 
-                        <button> CALCULATE </button>
+                        <button class="piggy-button"> CALCULATE </button>
                     </form>
+
+                    <!-- payback -->
                     <label for="email">Payback Results</label>
                     <input id="email" placeholder="Payback Results" type="text">
-                    <button> LOGIN </button>
-                </div>
-                <div class="clear"></div>
-                <div>
-                    <div class="header">
-                        <h1>The Better Way<br> To Save & Invest Earn </h1>
-                        <p style="font-size: 14.5px; font-weight: 600; color: #444444;">
-                            PiggyVest helps you achieve financial freedom by enabling you save responsibly<br> and invest on the go<br><br>
-                            10% - 15.5% interests on savings. <br>Earn over 25% return
-                            on investments.</p><br>
-                        <img src="images/ios.png" class="bnnr">
-                        <img src="images/google.png" class="bnnr">
+                    <button class="piggy-button"> LOGIN </button>
+
+                    <div class="share-social-media">
+                        <button class="facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>share</span>
+                        </button>
+                        <button class="twitter">
+                            <i class="fab fa-twitter"></i>
+                            <span>twitter</span>
+                        </button>
+                        <button class="whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Whatsapp</span>
+                        </button>
                     </div>
-                    
-                </div>
+                                   <div class="or"> OR</div>
+                    <div class="download">
+                        <button>
+                            <i class="fas fa-download"></i>
+                            <span>download as pdf</span>
+                        </button>
+                    </div>
+                </div>     
+                
+                <div class="clear"></div>     
+
             </div>
-
-
         </div>
     </div>
 </body>
