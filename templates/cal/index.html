@@ -53,10 +53,8 @@
                         <button> CALCULATE </button>
                     </form>
                     <label for="email">Payback Results</label>
-                    <textarea id="email" type="textarea" rows="10" cols="25" disabled placeholder="Payback Results">
-                        {%if not piggybank %}
-Zero investment
-                        {%else%}
+                    <textarea id="email" type="textarea" rows="10" cols="25" disabled placeholder="Payback Results">{%if not piggybank %}
+Zero investment{%else%}
 Piggybank interest is ₦{{piggybank}}
 Safelock interest is ₦{{piggybank}} to ₦{{safelock15}} 
 Target interest is ₦{{piggybank}}
