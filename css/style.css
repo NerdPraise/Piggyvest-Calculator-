@@ -216,10 +216,8 @@ label {
 
 .share-social-media button i,
  .download button i {
-    background-color: white;;
     padding: 10px;
     border-radius: 3px;
-    margin-right:10px;
 } 
 
 /* facebok */
@@ -227,10 +225,13 @@ label {
     background-color: #3b5998;
     
 }
-.share-social-media .fa-facebook-f {
-    color: #3b5998;
+.share-social-media .fa-facebook-f,
+.share-social-media .fa-twitter,
+.share-social-media .fa-whatsapp {
+    color: white;
 }
-.share-social-media .facebook:hover{
+.share-social-media .facebook:hover,
+.share-social-media .facebook:hover i{
     background-color: white;
     color: #3b5998;
     transition: ease 0.5s;
@@ -240,10 +241,9 @@ label {
     background-color: #00acee;
     
 }
-.share-social-media .fa-twitter {
-    color: #00acee;
-}
-.share-social-media .twitter:hover{
+
+.share-social-media .twitter:hover,
+.share-social-media .twitter:hover i{
     background-color: white;
     color: #00acee;
     transition: ease 0.5s;
@@ -253,10 +253,8 @@ label {
     background-color: #25d336;
     
 }
-.share-social-media .fa-whatsapp {
-    color: #25d336;
-}
-.share-social-media .whatsapp:hover{
+.share-social-media .whatsapp:hover,
+.share-social-media .whatsapp:hover i{
     background-color: white;
     color: #25d336;
     transition: ease 0.5s;
