@@ -166,6 +166,9 @@ button:hover{
     .homimg {
         width:80%;
     }
+    .hid {
+        display: none;
+    }
     
 }
 
