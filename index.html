@@ -6,8 +6,7 @@
     
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="shortcut icon" type="image/icon" href="images/favicon.png">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <script src="https://kit.fontawesome.com/1395a25f53.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -45,31 +44,33 @@
                     </header>
                     <!-- input -->
                     <form action="">
-                        <label for="fullname">Amount to invest</label>
-                        <input id="fullname" placeholder="Amount" type="number" value="Amount">
-                        <label for="email">Start Date</label>
-                        <input id="email" placeholder="Start date" type="date" value="start">
-                        <label for="email">End Date</label>
-                        <input id="email" placeholder="End date" value="end" type="date">
+                        <label for="amount">Amount to invest</label>
+                        <input id="amount" placeholder="Amount" type="number">
+                        <label for="start-date">Start Date</label>
+                        <input id="star-date" placeholder="Start date" type="date">
+                        <label for="end-date">End Date</label>
+                        <input id="end-date" placeholder="End date" type="date">
 
                         <button class="piggy-button"> CALCULATE </button>
                     </form>
 
                     <!-- payback -->
-                    <label for="email">Payback Results</label>
-                    <input id="email" placeholder="Payback Results" type="text">
+                    <label for="result">Payback Results</label>
+                    <input id="result" placeholder="Payback Results" type="text">
                     <button class="piggy-button"> LOGIN </button>
 
                     <div class="share-social-media">
-                        <button class="facebook">
+                        <button class="facebook button" data-sharer="facebook" 
+                        data-hashtag="PiggyvestCalculator"
+                        data-url="https://piggycalcr.herokuapp.com/">
                             <i class="fab fa-facebook-f"></i>
                             <span>share</span>
                         </button>
-                        <button class="twitter">
+                        <button class="twitter" class="button" data-sharer="twitter" data-title="Checkout our piggyvest interest calculator!" data-url="https://piggycalcr.herokuapp.com/">
                             <i class="fab fa-twitter"></i>
                             <span>twitter</span>
                         </button>
-                        <button class="whatsapp">
+                        <button class="whatsapp button" data-sharer="whatsapp" data-title="Checkout our piggyvest interest calculator!" data-url="https://piggycalcr.herokuapp.com/" data-web>
                             <i class="fab fa-whatsapp"></i>
                             <span>Whatsapp</span>
                         </button>
@@ -88,6 +89,8 @@
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
