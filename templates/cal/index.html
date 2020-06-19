@@ -43,7 +43,7 @@
                     </header>
                     <form id="form" method="POST" form-data-url="{%url 'calc'%}">
                         {%csrf_token%}
-                        <label for="fullname">Amount to invest</label>
+                        <label for="fullname">Investment Goal</label>
                         <input id="amount" placeholder="Amount" type="number" name="amount">
                         <label for="email">Plan</label>
                         <select name="plan" id="plan">
