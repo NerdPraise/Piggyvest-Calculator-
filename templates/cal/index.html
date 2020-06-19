@@ -57,7 +57,7 @@
                     </form>
                     <label for="email">Payback Results</label>
                     <textarea id="texta" type="textarea" rows="10" cols="25" disabled placeholder="Payback Results">Zero investments</textarea>
-                    <button class="btu export" onclick="location.href='{%url 'export'%}'"> Export report </button>
+                    <button class="btu export" > Export report </button>
                     <button class="btu" style="float:right"> Share </button>
                 </div>
                 <div class="clear"></div>
@@ -80,6 +80,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="{%static 'js/script.js'%}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
 </body>
 
 </html>

@@ -23,18 +23,11 @@ $("#btns").click(function() {
 
 $(".export").click(function() {
     event.preventDefault()
-    data = {"data":[$("#texta").val()]}
-    $.ajax({
-        url:"/export",
-        type: "POST",
-        data: data,
-        success: function (data) {
-             if (data.success) {
+    data = $("#texta").val()
+    var doc = new jsPDF()
 
-             }
-            } 
-
-    })
+    doc.text(data, 10, 10)
+    doc.save('a4.pdf')
 })
 
 
