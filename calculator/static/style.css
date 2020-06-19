@@ -35,11 +35,11 @@ header {
     
 }
 
-input:focus, textarea:focus, button:focus {
+input:focus, textarea:focus, select:focus, button:focus {
     outline:0
 }
 
-input, textarea {
+input, textarea, select {
     width: 100%;
     border: 0px;
     border-radius: .25rem;
@@ -51,7 +51,7 @@ input, textarea {
     background-color:rgba(0, 136, 204, 0.08);
     color:#1a202c;
 }
-input {
+input, select {
     height:55px;
 }
 

@@ -1,6 +1,8 @@
+from calendar import monthrange
 from django.shortcuts import render
 from .models import Interest 
-from datetime import timedelta,date, datetime
+from django.utils import timezone
+from datetime import timedelta, datetime
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
@@ -20,27 +22,49 @@ def create_info(request):
     if request.method == "POST":
         try:
             amount = int(request.POST.get("amount"))
-            start_date = request.POST.get("start")
+            plan = request.POST.get("plan")
+            start_date = str(timezone.now()).split(" ")[0]
             start_date = datetime.strptime(start_date, '%Y-%m-%d')
             end_date = request.POST.get("end")
             end_date = datetime.strptime(end_date, '%Y-%m-%d')
-            duration = end_date - start_date
-            duration = duration / timedelta(days=365)
-            piggybank = round(amount *  PIGGYBANK_RATE * duration, 4)
-            safelock_15 = round(amount *  SAFELOCK_RATE15 * duration, 4)
-            flex_dollar = round(amount *  FLEX_DOLLAR * duration, 4)
-            investify =round( amount *  INVESTIFY_RATE25 * duration, 4)
+            if plan == "Daily": 
+                duration = end_date - start_date 
+                duration = duration.days 
+                average = amount / duration
+
+                piggybank = round(average / 1.0002739, 2)
+                safelock_15 = round(average/ 1.0004246, 2)
+                flex_dollar = round(average / 1.0001643, 2)
+                investify = round(average / 1.0006849, 2)
+                word = "days"
+            elif plan == "Monthly":
+                duration = 0
+                while start_date <= end_date:
+                    start_date += timedelta(days=monthrange(start_date.day,start_date.month)[1])
+                    duration += 1
+                average = amount / duration
+                print(average, duration)    
+                piggybank = round(average / 1.00833, 2)
+                safelock_15 = round(average/ 1.01291, 2)
+                flex_dollar = round(average / 1.005, 2)
+                investify = round(average / 1.0208, 2)
+                word = "months"
+            elif plan == "Bi-Monthly":
+                 pass
+            
+            
         except:
             data = {"error":"Invalid details"}
             return JsonResponse(data)
-
+        
         data = {
-            "success":f"""Piggybank interest is ₦{piggybank}
-Safelock interest is ₦{piggybank} to ₦{safelock_15} 
-Target interest is ₦{piggybank}
-Flex interest is ₦{piggybank}
-Flex dollar interest is ₦{flex_dollar}
-Investify interest is between ₦{piggybank} to ₦{investify}"""
+            "success":f"""For {duration} {word}
+Plan:PiggyBank, Estimate saving: ₦{piggybank}
+Plan:Safelock, Estimate saving: ₦{piggybank} to ₦{safelock_15} 
+Plan:Target, Estimate saving is ₦{piggybank}
+Plan:Flex, Estimate saving is ₦{piggybank}
+Plan:Flex Dollar, Estimate saving is ₦{flex_dollar}
+Plan:Investify, Estimate saving is between ₦{piggybank} to ₦{investify}"""
         }
         return JsonResponse(data)
         

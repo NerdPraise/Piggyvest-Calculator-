@@ -45,11 +45,14 @@
                         {%csrf_token%}
                         <label for="fullname">Amount to invest</label>
                         <input id="amount" placeholder="Amount" type="number" name="amount">
-                        <label for="email">Start Date</label>
-                        <input id="start" placeholder="Start date" type="date" name="start">
+                        <label for="email">Plan</label>
+                        <select name="plan" id="plan">
+                            <option>Daily</option>
+                            <option>Monthly</option>
+                            <option>Bi-Monthly</option>
+                        </select>
                         <label for="email">End Date</label>
                         <input id="end" placeholder="End date" name="end" type="date">
-
                         <button id="btns"> CALCULATE </button>
                     </form>
                     <label for="email">Payback Results</label>
