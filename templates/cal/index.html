@@ -5,6 +5,7 @@
 <head>
     <title>Dashboard - PiggyVest</title>
     <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
+    <script src="https://kit.fontawesome.com/1395a25f53.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" type="image/icon" href="{% static 'images/favicon.png'%}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +15,10 @@
 <body>
     <div>
         <div class="nav">
-            <a href="https://www.piggyvest.com"><img alt="piggy" src="{% static 'images/piggy.png'%}" style="margin-left:30px" width="200px"></a>
+            <a href="https://www.piggyvest.com"><img alt="piggy" src="{% static 'images/piggy.png'%}"
+                    style="margin-left:30px" width="200px"></a>
             <div class="half" style="padding-top:12px">
-                <ul class="navlist"style="margin:0; padding: 0; list-style: none;">
+                <ul class="navlist" style="margin:0; padding: 0; list-style: none;">
                     <li>About</li>
                     <li>Blog</li>
                     <li>FAQ</li>
@@ -24,11 +26,11 @@
                     <li>Log In</li>
                     <li>Create an Account</li>
                 </ul>
-                <span class="ham" >☰</span>
+                <span class="ham">☰</span>
             </div>
         </div>
         <div class="sm-container">
-            
+
             <div class="big-container">
                 <div class="halfs">
                     <img src="{% static 'images/home.png'%}" class="homimg" width="600px">
@@ -55,23 +57,39 @@
                         <input id="end" placeholder="End date" name="end" type="date">
                         <button id="btns"> CALCULATE </button>
                     </form>
+
                     <label for="email">Payback Results</label>
-                    <textarea id="texta" type="textarea" rows="10" cols="25" disabled placeholder="Payback Results">Zero investments</textarea>
-                    <button class="btu export" > Export report </button>
+                    <textarea id="texta" type="textarea" rows="10" cols="25" disabled
+                        placeholder="Payback Results">Zero investments</textarea>
+                    <button class="btu export"> Export report </button>
                     <button class="btu" style="float:right"> Share </button>
+                    <div class="share-social-media">
+                        <i class="fab fa-facebook-f" style="color: blue; " data-sharer="facebook"
+                            data-hashtag="PiggyvestCalculator" data-url="https://piggycalcr.herokuapp.com/"></i>
+                        <i class="fab fa-twitter" style="color: lightblue; " data-sharer="twitter"
+                            data-title="Checkout our piggyvest interest calculator!"
+                            data-url="https://piggycalcr.herokuapp.com/"></i>
+                        <i class="fab fa-whatsapp" style="color: green; " data-sharer="whatsapp"
+                            data-title="Checkout our piggyvest interest calculator!"
+                            data-url="https://piggycalcr.herokuapp.com/" data-web></i>
+
+
+                    </div>
+
                 </div>
                 <div class="clear"></div>
                 <div>
                     <div class="header">
                         <h1>The Better Way<br> To Save & Invest Earn </h1>
                         <p style="font-size: 14.5px; font-weight: 600; color: #444444;">
-                            PiggyVest helps you achieve financial freedom by enabling you save responsibly<br> and invest on the go<br><br>
+                            PiggyVest helps you achieve financial freedom by enabling you save responsibly<br> and
+                            invest on the go<br><br>
                             10% - 15.5% interests on savings. <br>Earn over 25% return
                             on investments.</p><br>
                         <img src="{% static 'images/ios.png' %}" class="bnnr">
                         <img src="{% static 'images/google.png' %}" class="bnnr">
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -79,14 +97,18 @@
         </div>
         <footer style="background-color: rgba(0, 136, 204, 0.04); min-height:160px; padding: 30px 30px 30px 60px;">
             <div>
-                <a href="https://www.piggyvest.com"><img alt="piggy" src="{% static 'images/piggy.png'%}" width="200px"></a>
+                <a href="https://www.piggyvest.com"><img alt="piggy" src="{% static 'images/piggy.png'%}"
+                        width="200px"></a>
             </div>
             <div style="font-size: 14px; font-weight: 600;" class="halfs">
-                <p>PiggyVest (formerly piggybank.ng) is the largest online savings & investing platform in Nigeria. For over 4 years, our customers have saved and invested billions of Naira that they would normally be tempted to spend.</p>
-                <p>Office: Tesmot House, 3 Abdulrahman Okene Close, off Ligali Ayorinde Street, Victoria Island, Lagos. 0700 933 933 933 (Mon-Fri from 9am-5pm) - contact@piggyvest.com</p>
+                <p>PiggyVest (formerly piggybank.ng) is the largest online savings & investing platform in Nigeria. For
+                    over 4 years, our customers have saved and invested billions of Naira that they would normally be
+                    tempted to spend.</p>
+                <p>Office: Tesmot House, 3 Abdulrahman Okene Close, off Ligali Ayorinde Street, Victoria Island, Lagos.
+                    0700 933 933 933 (Mon-Fri from 9am-5pm) - contact@piggyvest.com</p>
             </div>
             <div class="halfs">
-                <div class=''>
+                <div class='half'>
                     <h6 style="margin: 0;">Quick Links</h6>
                     <ul style="font-size: 14px; list-style: none; margin:0; padding-left: 0; padding-top: 7px;">
                         <li>AutoSave</li>
@@ -101,6 +123,7 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="{%static 'js/script.js'%}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
 </body>
 

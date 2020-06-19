@@ -192,3 +192,115 @@ button:hover{
     width:44%;
     display: inline;
 }
+
+.share-social-media {
+    min-width: 100%;
+    margin: 20px auto;
+    max-width: 450px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.share-social-media button,
+ .download button{
+    margin: 10px;
+    padding: 7px;
+    padding-left: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 0;
+    border-radius: 5px 5px 5px 0;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: "U8-Regular";
+}
+
+.share-social-media button i,
+ .download button i {
+    padding: 10px;
+    border-radius: 3px;
+} 
+
+/* facebok */
+/* .share-social-media .facebook {
+    background-color: #3b5998;
+    
+} */
+.share-social-media .fa-facebook-f,
+.share-social-media .fa-twitter,
+.share-social-media .fa-whatsapp {
+    color: white;
+}
+.share-social-media .facebook:hover,
+.share-social-media .facebook:hover i{
+    background-color: white;
+    color: #3b5998;
+    transition: ease 0.5s;
+}
+/* twitter */
+/* .share-social-media .twitter {
+    background-color: #00acee;
+    
+} */
+
+.share-social-media .twitter:hover,
+.share-social-media .twitter:hover i{
+    background-color: white;
+    color: #00acee;
+    transition: ease 0.5s;
+}
+/* twitter */
+/* .share-social-media .whatsapp {
+    background-color: #25d336;
+    
+} */
+.share-social-media .whatsapp:hover,
+.share-social-media .whatsapp:hover i{
+    background-color: white;
+    color: #25d336;
+    transition: ease 0.5s;
+}
+/* download */
+.download {
+    margin: 10px 0;
+}
+.download button {
+    margin: 0 auto;
+    background-color: #e6302f;
+    width: 50%;
+    text-transform: uppercase;
+    justify-content: center;
+    font-size: 15px;
+}
+.download button i {
+    background-color: #e6302f;
+}
+.download button:hover,
+.download button:hover i{
+    background-color: white;
+    color: #e6302f;
+    transition: ease 0.5s;
+}
+
+.or {
+    text-align: center;
+}
+@media screen and (max-width: 450px) {
+    .share-social-media {
+        grid-template-columns: 150px;
+        grid-template-rows: repeat(3, 1fr);
+        justify-content: center;
+    }
+    .share-social-media button,
+ .download button{
+    font-size: 15px;
+}
+}
+
+
+i {
+    cursor: pointer;
+    font-size: 30px;
+}
