@@ -14,7 +14,6 @@ $("#btns").click(function() {
             if (data.error) {
                 $("#texta").text(data.error)
             } else if (data.success) {
-                alert("ff")
                 $("#texta").text(data.success)
             }
         },

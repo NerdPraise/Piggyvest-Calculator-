@@ -42,15 +42,24 @@ def create_info(request):
                 while start_date <= end_date:
                     start_date += timedelta(days=monthrange(start_date.day,start_date.month)[1])
                     duration += 1
-                average = amount / duration
-                print(average, duration)    
+                average = amount / duration 
                 piggybank = round(average / 1.00833, 2)
                 safelock_15 = round(average/ 1.01291, 2)
                 flex_dollar = round(average / 1.005, 2)
                 investify = round(average / 1.0208, 2)
                 word = "months"
             elif plan == "Bi-Monthly":
-                 pass
+                duration = 0
+                while start_date <= end_date:
+                    start_date += timedelta(days=monthrange(start_date.day,start_date.month)[1])
+                    duration += 1
+                duration = duration // 2
+                average = amount / duration
+                piggybank = round(average / 1.0166, 2)
+                safelock_15 = round(average/ 1.02583, 2)
+                flex_dollar = round(average / 1.01, 2)
+                investify = round(average / 1.04166, 2)
+
             
             
         except:
