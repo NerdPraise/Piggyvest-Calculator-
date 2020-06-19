@@ -84,8 +84,8 @@ def export_data(request):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="you.csv"'
 
-    writer = csv.writer(response)
-    for line in content:
-        writer.writerow(line)
+    # writer = csv.writer(response)
+    # for line in content:
+    #     writer.writerow(line)
 
     return response
