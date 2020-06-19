@@ -187,3 +187,8 @@ button:hover{
         width: 90%;
     }
 }
+
+.btu {
+    width:44%;
+    display: inline;
+}

@@ -3,9 +3,10 @@ from django.shortcuts import render
 from .models import Interest 
 from django.utils import timezone
 from datetime import timedelta, datetime
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse, HttpResponse, HttpResponseNotFound
 from django.views.decorators.csrf import csrf_exempt
-
+import csv
+from django.core.files.storage import FileSystemStorage
 
 SAFELOCK_RATE15 = 0.155
 PIGGYBANK_RATE = INVESTIFY_RATE10 = TARGET_RATE = FLEX_RATE = SAFELOCK_RATE10 = 0.10
@@ -77,4 +78,15 @@ Plan:Investify, Estimate saving is between ₦{piggybank} to ₦{investify}"""
         }
         return JsonResponse(data)
         
+@csrf_exempt
+def export_data(request):
+    if request.method == "POST":
+        content = request.POST.get("data[]")
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename="you.csv"'
 
+        writer = csv.writer(response)
+        for line in content:
+            writer.writerow(line)
+
+        return response

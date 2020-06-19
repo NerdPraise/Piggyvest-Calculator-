@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", index, name="index"),
     path("calc", create_info, name="calc"),
+    path("export", export_data, name="export"),
 
 ]

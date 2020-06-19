@@ -20,3 +20,26 @@ $("#btns").click(function() {
         
     })
 })
+
+$(".export").click(function() {
+    event.preventDefault()
+    data = {"data":[$("#texta").val()]}
+    $.ajax({
+        url:"/export",
+        type: "POST",
+        data: data,
+        success: function (data) {
+             if (data.success) {
+
+             }
+            } 
+
+    })
+})
+
+
+
+$.post(url, function(data)
+    {
+        location.replace(url);
+    });
